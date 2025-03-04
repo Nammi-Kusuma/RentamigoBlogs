@@ -343,7 +343,7 @@ const BlogDetail: React.FC = () => {
         )}
       </div>
       <br /><br /><br />
-      <Routes>
+      {/* <Routes>
           <Route path="/" element={
             <>
               <div className="mb-8 w-full">
@@ -354,9 +354,9 @@ const BlogDetail: React.FC = () => {
             </>
           } />
           <Route path="/blog/:id" element={<BlogDetail />} />
-        </Routes>
+        </Routes> */}
       <div className="mt-12 w-full">
-        <h3 className="text-xl font-bold text-gray-900 mb-6">Related Properties</h3>
+        {/* <h3 className="text-xl font-bold text-gray-900 mb-6">Related Properties</h3> */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         
           {initialBlogPosts
