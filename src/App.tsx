@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<HomePage />} />
             <Route path="/create" element={<CreateBlogPage />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>
