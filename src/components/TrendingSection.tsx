@@ -1,12 +1,14 @@
 import React from 'react';
 import { TrendingUp, Share2 } from 'lucide-react';
 import { Blogpost } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 interface TrendingSectionProps {
   blogs: Blogpost[];
 }
 
 const TrendingSection: React.FC<TrendingSectionProps> = ({ blogs }) => {
+  const navigate = useNavigate();
   return (
     <div className="mb-12">
       <div className="flex items-center mb-6">
@@ -44,7 +46,7 @@ const TrendingSection: React.FC<TrendingSectionProps> = ({ blogs }) => {
               </div>
               
               <a 
-                href={`/blog/${blog.id}`} 
+                onClick={() => navigate(`/blog/${blog.id}`)} style={{cursor: 'pointer'}}
                 className="text-black hover:text-gray-700 font-medium text-sm"
               >
                 Read article

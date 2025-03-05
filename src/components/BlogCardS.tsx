@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Clock, ArrowRight, Award, ThumbsUp,MessageCircle, Share2 } from 'lucide-react';
 import { Blogpost } from '../types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface BlogCardProps {
   blog: Blogpost;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   
   // Determine if this is a popular blog (for badge display)
@@ -72,7 +73,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
       
       <div className="px-6 pb-6">
         <a 
-          href={`/blog/${blog.id}`} 
+          onClick={() => navigate(`/blog/${blog.id}`)} style={{cursor: 'pointer'}}
           className="inline-flex items-center text-black hover:text-gray-700 font-medium transition"
         >
           Read more
